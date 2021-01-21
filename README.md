@@ -1,4 +1,4 @@
-For Kernel 4.15.x ~ 5.7.x (Linux Mint, Ubuntu or Debian Derivatives)
+RTL8188FU driver for Linux kernel 4.15.x ~ 5.10.x (Linux Mint, Ubuntu or Debian Derivatives)
 
 ------------------
 
@@ -26,6 +26,16 @@ Run following commands for disable power management and plugging/replugging issu
 
 `echo "options rtl8188fu rtw_power_mgnt=0 rtw_enusbss=0" | sudo tee /etc/modprobe.d/rtl8188fu.conf`
 
+
+Run following commands for disabling MAC Address Spoofing (Note: No need this on Ubuntu based distributions. MAC Address Spoofing is already disable on Ubuntu base).
+
+`sudo mkdir -p /etc/NetworkManager/conf.d/`
+
+`sudo touch /etc/NetworkManager/conf.d/disable-random-mac.conf`
+
+`echo -e "[device]\nwifi.scan-rand-mac-address=no" | sudo tee /etc/NetworkManager/conf.d/disable-random-mac.conf`
+
+
 ------------------
 
 ## How to uninstall
@@ -41,9 +51,9 @@ Run following commands for disable power management and plugging/replugging issu
 
 ## How to install from PPA repository
 
-You can install rtl81188fu driver with following commands from PPA.
+You can install rtl8188fu driver with following commands from PPA.
 
-for xUbuntu 16.04-18.04-19.10-20.04 / Linux Mint 18.x-19.x-20.x
+for xUbuntu 16.04-18.04-20.04-20.10 / Linux Mint 18.x-19.x-20.x
 
 `sudo add-apt-repository ppa:kelebek333/kablosuz`
 
