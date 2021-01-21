@@ -458,7 +458,7 @@ ifeq ($(CONFIG_RTL8723B), y)
 rtl8188fu-$(CONFIG_MP_INCLUDED)+= core/rtw_bt_mp.o
 endif
 
-obj-$(CONFIG_RTL8188FU) := rtl8188fu.o
+obj-m := rtl8188fu.o
 
 else
 
